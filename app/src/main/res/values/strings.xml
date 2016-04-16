@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Phone Contact Recovery Back-up</string>
+    <string name="backup">Back-Up</string>
+    <string name="recovery">Recovery</string>
+</resources>

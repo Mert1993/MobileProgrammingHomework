@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/radialgradientback"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".MainActivityPhoneContactRecovery">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/appNameText">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="30dp"
+            android:text="Phone Contact Recovery"
+            android:textColor="@color/DarkRed"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/appNameText"
+        android:id="@+id/linearLayoutRadioGroup">
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Turkcell"
+                android:textColor="@color/DarkBlue"
+                android:layout_weight="1"
+                android:id="@+id/radioButtonTurkcell"
+                android:onClick="showTurkcellNumbers" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Avea"
+                android:textColor="@color/DarkBlue"
+                android:id="@+id/radioButtonAvea"
+                android:onClick="showAveaNumbers" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Vodafone"
+                android:textColor="@color/DarkBlue"
+                android:id="@+id/radioButtonVodafone"
+                android:onClick="showVodafoneNumbers" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Show All"
+                android:textColor="@color/DarkBlue"
+                android:id="@+id/radioButtonShowAll"
+                android:onClick="showAllNumbers"
+                android:checked="true"/>
+
+        </RadioGroup>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:layout_below="@+id/linearLayoutRadioGroup"
+        android:id="@+id/linearLayoutListView">
+
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/contactsList"
+            android:clickable="false" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/linearLayoutListView"
+        android:id="@+id/linearLayoutButton">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/ovalbutton"
+            android:id="@+id/buttonBackup"
+            android:text="@string/backup"
+            android:textColor="@color/NavajoWhite"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:onClick="backupContacts"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/ovalbutton"
+            android:id="@+id/buttonRecovery"
+            android:text="@string/recovery"
+            android:textColor="@color/NavajoWhite"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:onClick="recoveryContacts"/>
+
+    </LinearLayout>
+
+</LinearLayout>
